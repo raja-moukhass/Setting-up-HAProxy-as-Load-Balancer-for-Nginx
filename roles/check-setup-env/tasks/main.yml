@@ -1,0 +1,56 @@
+---
+# tasks file for check-env
+   
+   - name: Check If Docker Is Installed
+     command: docker --version
+     register: docker_valid
+     ignore_errors: yes
+   - name: Debug Docker Output
+     debug:
+      var: docker_valid
+   - name: install dependencies
+     apt:
+      name: "{{item}}"
+      state: present
+      update_cache: yes
+     loop:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg-agent
+      - software-properties-common
+     when: docker_valid.failed
+   - name: add GPG key
+     apt_key:
+      url: "{{ docker_dowload_url }}"
+      state: present
+   - name: add docker repository
+     apt_repository:
+      repo: deb "{{ docker_repo }}" bullseye stable
+      state: present
+   - name: Update packages
+     apt:
+      update_cache: yes
+   - name: install docker
+     apt:
+      name: "{{item}}"
+      state: latest
+      update_cache: yes
+     loop:
+       - docker-ce
+       - docker-ce-cli
+       - containerd.io
+   - name: make sure docker is active
+     service:
+      name: docker
+      state: started
+      enabled: yes
+   - name: chmod 666 /var/run/docker.sock
+     shell: chmod 666 /var/run/docker.sock
+     become: true
+   - name: Install docker-compose from official github repo
+     remote_user: ansible_ubuntu_demo
+     get_url:
+      url : "{{ docker_compose_url }}"
+      dest: /usr/local/bin/docker-compose
+      mode: 'u+x,g+x'
