@@ -5,6 +5,14 @@
      command: docker --version
      register: docker_valid
      ignore_errors: yes
+   - name: install python
+     package:
+      name: python3
+      state: present
+   - name: Install docker and some dependencies
+     apt:
+      name: python3-pip
+      state: present
    - name: Debug Docker Output
      debug:
       var: docker_valid
@@ -43,6 +51,9 @@
        - docker-ce-cli
        - containerd.io
      when: docker_valid.failed
+   - name: Install docker python module
+     pip:
+      name: docker
    - name: make sure docker is active
      service:
       name: docker
@@ -59,7 +70,7 @@
    
    - name: Debug Docker_compose Output
      debug:
-     var: docker_compose_valid
+      var: docker_compose_valid
 
    - name: Install docker-compose from official github repo
      remote_user: ansible_ubuntu_demo

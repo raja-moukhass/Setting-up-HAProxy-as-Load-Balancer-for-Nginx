@@ -3,3 +3,4 @@
   become_method: sudo
   roles:
       - check-setup-env
+      - destroy_containers_remove_images 
