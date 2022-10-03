@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  nginx:
+      container_name: nginx
+      image: nginxx
+      build: ./roles/setup-nginx-container/Dockerfiles
+      ports:
+        - "443:443"
+        - "80:80"
+      restart: always

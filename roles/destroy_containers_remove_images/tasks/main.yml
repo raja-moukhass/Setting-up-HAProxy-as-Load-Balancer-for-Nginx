@@ -15,6 +15,7 @@
   shell: |
      docker rm $(docker ps -a -q);
   when: docker_info.containers != 0
+  ignore_errors: yes
 
 - name: Get details of all images
   docker_host_info:
@@ -26,3 +27,4 @@
     name: "{{ item }}"
     state: absent
   loop: "{{ image_info.images | map(attribute='Id') | list }}"
+  ignore_errors: yes
