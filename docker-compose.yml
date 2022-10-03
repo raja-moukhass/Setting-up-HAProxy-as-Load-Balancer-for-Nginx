@@ -1,5 +1,15 @@
 version: '3.7'
 services:
+  php:
+    container_name: php
+    volumes:
+        - data/:/app
+    build: ./roles/setup-php-container/Dockerfiles
+    expose:
+        - 9000
+    networks:
+        - internal
+    restart: always
   nginx:
       container_name: nginx
       image: nginxx
@@ -7,4 +17,19 @@ services:
       ports:
         - "443:443"
         - "80:80"
+      volumes:
+        - data/:/var/www/site1.com/html
       restart: always
+      networks:
+        - internal
+ 
+networks:
+  internal:
+    driver: bridge
+volumes:
+  data:
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/ramoukha/coding_challenge_nextM/data'
+
