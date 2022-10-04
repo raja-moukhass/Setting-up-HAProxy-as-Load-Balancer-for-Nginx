@@ -4,8 +4,7 @@ services:
      web:
        image: nginx:alpine
        ports:
-           - "8080:80"
-           - "8081:80"
+           - "80:80"
            
        volumes:
            - ./public_html:/public_html
@@ -25,7 +24,7 @@ services:
      haproxy:
        build: ./haproxy
        ports:
-         - 80:80
+         - "8080:80"
        networks:
          - nginxphp
        restart: always
