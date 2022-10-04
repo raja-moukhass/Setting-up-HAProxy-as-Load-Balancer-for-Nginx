@@ -5,6 +5,7 @@ services:
        image: nginx:alpine
        ports:
            - "80:80"
+           
        volumes:
            - ./public_html:/public_html
            - ./conf.d:/etc/nginx/conf.d
