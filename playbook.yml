@@ -4,4 +4,3 @@
   roles:
       - check-setup-env
       - destroy_containers_remove_images
-      - setup-haproxy-container
