@@ -8,8 +8,8 @@ services:
            - "8081:81"
            
        volumes:
-           - ./public_html:/public_html
-           - ./conf.d:/etc/nginx/conf.d
+           - ../containers_and_configurations/php/public_html:/public_html
+           - ../containers_and_configurations/nginx/conf.d:/etc/nginx/conf.d
            - /etc/localtime:/etc/localtime
        networks:
            - nginxphp
@@ -17,13 +17,13 @@ services:
      php:
        image: php:7.1.11-fpm-alpine
        volumes:
-           - ./public_html:/public_html
+           - ../containers_and_configurations/php/public_html:/public_html
        expose:
            - 9000
        networks:
            - nginxphp
      haproxy:
-       build: ./haproxy
+       build: ../containers_and_configurations/haproxy
        ports:
          - "80:80"
          - "84:84"

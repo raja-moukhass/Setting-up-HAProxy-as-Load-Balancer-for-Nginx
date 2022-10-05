@@ -78,8 +78,8 @@
       url : "{{ docker_compose_url }}"
       dest: /usr/local/bin/docker-compose
      when: docker_compose_valid.failed
-   - name: Install docker python module
+   - name: Install docker-compose python module
      pip:
-      name: docker
+      name: docker-compose
    - name: Ensure permissions docker-compose
      shell: sudo chmod +x /usr/local/bin/docker-compose
