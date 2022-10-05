@@ -1,2 +1,14 @@
 ---
 # tasks file for run-compose-with-ansible
+#
+
+    - name: Tear down existing services
+      community.docker.docker_compose:
+        project_src: /home/ramoukha/coding_challenge_nextM/docker_compose
+        state: absent
+    - name: Create and start services
+      community.docker.docker_compose:
+       project_src: /home/ramoukha/coding_challenge_nextM/docker_compose
+      register: output
+    - ansible.builtin.debug:
+         var: output

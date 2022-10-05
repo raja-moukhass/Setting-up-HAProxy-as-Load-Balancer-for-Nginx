@@ -63,23 +63,3 @@
      shell: chmod 666 /var/run/docker.sock
      become: true
 
-   - name: Check If Docker Is Installed
-     command: docker-compose --version
-     register: docker_compose_valid
-     ignore_errors: yes
-   
-   - name: Debug Docker_compose Output
-     debug:
-      var: docker_compose_valid
-
-   - name: Install docker-compose from official github repo
-     remote_user: ansible_ubuntu_demo
-     get_url:
-      url : "{{ docker_compose_url }}"
-      dest: /usr/local/bin/docker-compose
-     when: docker_compose_valid.failed
-   - name: Install docker-compose python module
-     pip:
-      name: docker-compose
-   - name: Ensure permissions docker-compose
-     shell: sudo chmod +x /usr/local/bin/docker-compose
