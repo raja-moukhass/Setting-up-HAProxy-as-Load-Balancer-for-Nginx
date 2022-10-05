@@ -1,5 +1,8 @@
-FROM haproxytech/haproxy-ubuntu:2.0
-COPY haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
+FROM debian
+run apt update -y && apt install haproxy -y
+RUN mv /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.bak
+COPY haproxy.cfg /etc/haproxy/haproxy.cfg
+
 ENTRYPOINT ["tail", "-f", "/dev/null"]
 
 
