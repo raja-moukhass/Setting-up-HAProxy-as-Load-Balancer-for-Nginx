@@ -1,2 +1,7 @@
 ---
 # tasks file for setup-haproxy-container
+- name: Reload haproxy
+  shell:
+   cmd: docker-compose kill -s HUP haproxy
+   chdir: /etc/haproxy-docker/
+
