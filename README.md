@@ -45,3 +45,19 @@ When this playbook is installed it will run 3 containers based off the structure
 
 <img src="schemafiles/schema2.png">
 
+we execute this playbook using this command:
+
+```
+sudo ansible-playbook playbook.yml
+```
+
+This command will launch the following roles:
+
+1. Install Docker and its dependencies from official documentation if they are not already installed and add permisions to it
+
+2. Install Docker-compose and its dependencies from official documentation if they are not already installed and add permisions to it
+
+3. Destroy images and containers and existing volumes to prevent port conflict and names (Again, Assuming you are running this in a test environment)
+
+4. Execute the Docker compose to launch the containers Nginx, Haproxy and PHP.
+
