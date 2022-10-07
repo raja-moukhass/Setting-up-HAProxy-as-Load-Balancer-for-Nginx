@@ -1,0 +1,12 @@
+# test1 
+
+ab -n 99 -c 1 http://10.11.100.48/
+
+# test2
+
+while true; do nc 10.11.100.48 80  & true; done
+
+# test3
+
+./slowloris.pl -dns 10.11.100.48 
+
