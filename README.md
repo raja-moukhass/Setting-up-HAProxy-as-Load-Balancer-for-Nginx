@@ -65,7 +65,7 @@ This command will launch the following roles:
 
 ### test 1
 
-go the browser and check by  entring
+In the browser check by entering:
 
 ```
 <YOUR IP ADRESS>:8080 (to see the content of the site1.com)
@@ -78,7 +78,7 @@ go the browser and check by  entring
 
 ### test 2
 
-go the browser and check by  "YOUR IP ADRESS"  and refresh to see diferent websites load 
+In the browser enter your ip address and refresh to see diferent websites load:
 
 ```
 <YOUR IP ADRESS>:80 
@@ -87,7 +87,7 @@ go the browser and check by  "YOUR IP ADRESS"  and refresh to see diferent websi
 
 ### test 3
 
-go the browser and check by entring:
+In the browser check by entering:
 
 ```
 <YOUR IP ADRESS>:84/stats
