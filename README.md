@@ -24,3 +24,24 @@ This is a general structure representing the approach we will be taking in order
 <img src="schemafiles/schema1.png">
 
 To demonstrate how to configure HAProxy, I have set up a test environment comprising two NGINX instances (Virtual Hosts) hosted on the same server but at different ports with different php web pages. I have installed HAProxy on a Ubuntu server and configured it as a load-balancer meaning it distributes the requests onto these NGINX instances using a round-robin mechanism.
+## Guidelines
+
+To run this project you don't have to check if the dependencies installed in your server; everything is automated. The Ansible playbook will check if the dependencies are installed, they will be automatically installed in which case they were not installed. Assuming you will be running this project on a fresh environment to prevent conflicts.
+ 
+
+* first run the script install_ansible.sh
+```
+sudo sh install_ansible.sh
+```
+the script above displays the Ansible version if it is installed else it installs it.
+
+Before running the Ansible playbook  you need to add these domaine names to the /etc/hosts:
+
+```
+www.site1.com www.site2.com site1.com site2.com
+```
+
+When this playbook is installed it will run 3 containers based off the structure below:
+
+<img src="schemafiles/schema2.png">
+
