@@ -83,7 +83,7 @@ In the browser enter your ip address and refresh to see diferent websites load:
 ```
 <YOUR IP ADRESS>:80 
 ```
-<img src="schemafiles/test2.png">
+<img src="schemafiles/site1site2.png">
 
 ### test 3
 
