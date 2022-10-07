@@ -9,13 +9,13 @@ The project depends on:
 
 * Docker/Docker-compose: tool for defining and running multi-container Docker applications.
 
-and some external dependencies:
+## Some external dependencies:
 
 * Nginx: is a web server that can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache. 
 
 * haproxy: high availability server load-balancer and proxy solution for TCP and HTTP-based applications.
 
-* php: Is a general-purpose scripting language geared toward web development
+* php: Is a general-purpose scripting language geared towards web development.
 
 ## Building the project
 
