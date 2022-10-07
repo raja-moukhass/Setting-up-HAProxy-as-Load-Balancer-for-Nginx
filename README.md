@@ -61,11 +61,43 @@ This command will launch the following roles:
 
 4. Execute the Docker compose to launch the containers Nginx, Haproxy and PHP.
 
-now you can go the browser and check . 
+## testing 
 
-* "YOUR IP ADRESS"  and refresh to see diferent websites load 
+### test 1
 
+go the browser and check by  entring
+
+```
+<YOUR IP ADRESS>:8080 (to see the content of the site1.com)
+```
+
+```
+<YOUR IP ADRESS>:8081 (to see the content of the site2.com)
+```
 <img src="schemafiles/test1.png">
+
+### test 2
+
+go the browser and check by  "YOUR IP ADRESS"  and refresh to see diferent websites load 
+
+```
+<YOUR IP ADRESS>:80 
+```
+<img src="schemafiles/test2.png">
+
+### test 3
+
+go the browser and check by entring:
+
+```
+<YOUR IP ADRESS>:84/stats
+```
+
+<img src="schemafiles/stats.png">
+
+
+
+
 
 
 
