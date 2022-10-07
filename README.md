@@ -5,17 +5,17 @@ This project is about configuring the haproxy as a load balancer for two Nginx V
 ## Dependencies
 The project depends on:
 
-* Ansible:
+* Ansible: a suite of software tools that enables infrastructure as code.
 
-* Docker/Docker-compose:
+* Docker/Docker-compose: tool for defining and running multi-container Docker applications.
 
 and some external dependencies:
 
-* Nginx: 
+* Nginx: is a web server that can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache. 
 
-* haproxy:
+* haproxy: high availability server load-balancer and proxy solution for TCP and HTTP-based applications.
 
-* php:
+* php: Is a general-purpose scripting language geared toward web development
 
 ## Building the project
 
