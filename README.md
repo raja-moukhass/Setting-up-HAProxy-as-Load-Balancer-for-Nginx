@@ -68,11 +68,11 @@ This command will launch the following roles:
 In the browser check by entering:
 
 ```
-<YOUR IP ADRESS>:8080 (to see the content of the site1.com)
+<YOUR IP ADDRESS>:8080 (to see the content of the site1.com)
 ```
 
 ```
-<YOUR IP ADRESS>:8081 (to see the content of the site2.com)
+<YOUR IP ADDRESS>:8081 (to see the content of the site2.com)
 ```
 <img src="schemafiles/test1.png">
 
@@ -81,7 +81,7 @@ In the browser check by entering:
 In the browser enter your ip address and refresh to see diferent websites load:
 
 ```
-<YOUR IP ADRESS>:80 
+<YOUR IP ADDRESS>:80 
 ```
 <img src="schemafiles/test2.png">
 
@@ -90,7 +90,7 @@ In the browser enter your ip address and refresh to see diferent websites load:
 In the browser check by entering:
 
 ```
-<YOUR IP ADRESS>:84/stats
+<YOUR IP ADDRESS>:84/stats
 ```
 
 <img src="schemafiles/stats.png">
